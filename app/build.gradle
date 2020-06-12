@@ -1,0 +1,80 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdkVersion sdk.compileSdkVersion
+    buildToolsVersion sdk.buildToolVersion
+
+    defaultConfig {
+        applicationId appDetails.applicationId
+        minSdkVersion sdk.minSdkVersion
+        targetSdkVersion sdk.targetSdkVersion
+
+        versionCode appVersion.versionCode
+        versionName appVersion.versionName
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            minifyEnabled false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    sourceSets{
+        main.java.srcDirs += 'src/main/kotlin/'
+    }
+}
+
+dependencies {
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation libraries.kotlinLib
+    implementation libraries.appCompat
+    implementation libraries.androidMaterial
+    implementation libraries.dagger
+    implementation libraries.daggerAndroid
+    implementation libraries.daggerAndroidSupport
+    implementation libraries.retrofit
+    implementation libraries.retrofitGsonConverter
+    implementation libraries.rxKotlin
+    implementation libraries.rxAndroid
+
+    kapt compilers.dagger
+    kapt compilers.daggerAndroid
+
+    testImplementation unitTestLibraries.junit
+    testImplementation unitTestLibraries.mockito
+    testImplementation unitTestLibraries.mockitoInline
+    testImplementation unitTestLibraries.assertj
+
+    androidTestImplementation instrumentationTestLibraries.espressoCore
+    androidTestImplementation instrumentationTestLibraries.espressoContrib
+    androidTestImplementation instrumentationTestLibraries.espressoIntents
+    androidTestImplementation instrumentationTestLibraries.espressoIdling
+    androidTestImplementation instrumentationTestLibraries.rxIdler
+    androidTestImplementation instrumentationTestLibraries.okhttpMockWebServer
+    androidTestImplementation unitTestLibraries.junit
+}
+
+androidExtensions {
+    experimental = true
+}
