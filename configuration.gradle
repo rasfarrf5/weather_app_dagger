@@ -13,3 +13,7 @@ ext.sdk = [
 ext.appDetails = [
         applicationId: "com.rasfar.dagger.app"
 ]
+
+ext.testRunner = [
+        espressoRunner: "com.rasfar.dagger.app.EspressoTestRunner"
+]
