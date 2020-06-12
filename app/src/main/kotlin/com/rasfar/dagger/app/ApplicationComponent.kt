@@ -1,6 +1,7 @@
 package com.rasfar.dagger.app
 
 import com.rasfar.dagger.app.main.MainActivity
+import com.rasfar.dagger.app.main.MainModule
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
@@ -12,7 +13,9 @@ import javax.inject.Singleton
         AndroidInjectionModule::class,
         ActivityInjector::class,
 
-        AppConfigModule::class
+        AppConfigModule::class,
+
+        MainModule::class
     ]
 )
 interface ApplicationComponent {

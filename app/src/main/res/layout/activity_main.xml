@@ -1,15 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_horizontal"
     android:orientation="vertical">
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/mainTitleText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:text="@string/app_name"
         android:textSize="32sp" />
 
-</LinearLayout>
+    <LinearLayout
+        android:id="@+id/mainWeatherContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/mainCountryText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textSize="52sp"
+            tools:text="Country Name" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/mainTemperatureText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textColor="@android:color/black"
+            android:textSize="72sp"
+            android:textStyle="bold"
+            tools:text="100.00" />
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/mainProgressBar"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center" />
+
+</FrameLayout>

@@ -55,6 +55,9 @@ dependencies {
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
+    implementation project(":network")
+    implementation project(":weather_service")
+
     implementation libraries.kotlinLib
     implementation libraries.appCompat
     implementation libraries.androidMaterial

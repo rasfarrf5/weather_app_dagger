@@ -5,6 +5,7 @@ import android.content.Context
 import android.os.Bundle
 import android.os.StrictMode
 import androidx.test.runner.AndroidJUnitRunner
+import com.rasfar.dagger.app.support.RxIdlerController
 
 class EspressoTestRunner : AndroidJUnitRunner() {
 
@@ -15,6 +16,7 @@ class EspressoTestRunner : AndroidJUnitRunner() {
 
     @Throws(InstantiationException::class, IllegalAccessException::class, ClassNotFoundException::class)
     override fun newApplication(cl: ClassLoader, className: String, context: Context): Application {
+        RxIdlerController.initialize()
         return super.newApplication(cl, WeatherApplication::class.java.name, context)
     }
 }

@@ -1,3 +1,5 @@
 rootProject.name = "weather_app_dagger"
 
 include ':app'
+include ':weather_service'
+include ':network'
