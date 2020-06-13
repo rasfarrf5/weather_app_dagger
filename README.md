@@ -13,11 +13,18 @@ This demo explains below concepts such as:
 
 Features:
 
-Neat build.gradle with shared dependencies
+Neat build.gradle with shared dependencies.
+
 Dagger2 with android component. Injectable Views and structure to make the app testable and maintanable.
-State management with RxKotlin and Android Components - background-foreground and orientation changes will connect to the ongoing network request. Network requests continue in the background - UI is capable of retrieval of the current state when resumed.
+
+State management with RxKotlin and Android Components - background-foreground and orientation changes will connect to the ongoing network request.
+
+Network requests continue in the background - UI is capable of retrieval of the current state when resumed.
+
 Custom retrofit call factory to handle no connection error in a reactive way.
+
 Espresso tests with overriden dependencies and MockWebServer.
+
 Easy debuggable builds.
 
 ## Languages, libraries and tools used in this project
